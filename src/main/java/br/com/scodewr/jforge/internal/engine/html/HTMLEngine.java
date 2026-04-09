@@ -16,12 +16,12 @@ public class HTMLEngine implements ForgeEngine {
     public File fromJson(String json) {
         var er = entityRepresentationTransform.fromJson(json);
         var html = htmlForgeTransform.process(er.fAttributes());
-        return new File(html.render());
+        return new File(html);
     }
 
     @Override
     public File fromEntity(EntityRepresentation entityRepresentation) {
         var html = htmlForgeTransform.process(entityRepresentation.fAttributes());
-        return new File(html.render());
+        return new File(html);
     }
 }
